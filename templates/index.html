@@ -51,49 +51,21 @@
           </div>
         </div>
       </div>
-
       <!-- Section for Mars Hemispheres -->
       <div class="row" id="mars-hemispheres">
         <h2 style="text-align:center">Mars Hemispheres</h2>
-        <div class="col-md-6">
-          <figure id="mars-hemisphere">
-            <img
-              src="https://marshemispheres.com/images/full.jpg"
-              class="img-responsive"
-              alt="Responsive image"
-            />
-          <figcaption>Cerberus Hemisphere Enhanced</figcaption>
-        </div>
-        <div class="col-md-6">
-          <figure id="mars_hemisphere">
-            <img
-              src="https://marshemispheres.com/images/schiaparelli_enhanced-full.jpg"
-              class="img-responsive"
-              alt="Responsive image"
-            />
-          <figcaption>Schiaparelli Hemisphere Enhanced</figcaption>
-        </div>
-      </div>
-      <div class="row" id="mars-hemispheres">
-        <div class="col-md-6">
-          <figure id="mars_hemisphere">
-            <img
-              src="https://marshemispheres.com/images/syrtis_major_enhanced-full.jpg"
-              class="img-responsive"
-              alt="Responsive image"
-            />
-            <figcaption>Syrtis Major Hemisphere Enhanced</figcaption>
-          </figure>
-        </div>
-        <div class="col-md-6">
-          <figure id="mars_hemisphere">
-            <img
-              src="https://marshemispheres.com/images/valles_marineris_enhanced-full.jpg"
-              class="img-responsive"
-              alt="Responsive image"
-            />
-          <figcaption>Valles Marineris Hemisphere Enhanced</figcaption>
-        </div>
+        <!-- Loop through each hem to place in a col div -->
+        {% for hem in mars.hemispheres %}
+          <div class="col-md-6" id="mars-hemisphere">
+            <figure>
+              <img
+                src="{{ hem.image_url }}"
+                class="img-responsive"
+                alt="Responsive image"
+              />
+            <figcaption>{{ hem.title }}</figcaption>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </body>

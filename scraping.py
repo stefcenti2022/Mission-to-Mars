@@ -165,7 +165,7 @@ def mars_hemispheres(browser):
         image_url = f"{url}{image_url}"
 
         # Create a key value pair in the hemisphere variable:
-        hemisphere = {'image-url': image_url, 'title': image_title}
+        hemisphere = {'image_url': image_url, 'title': image_title}
 
         # Add the hemisphere to the list of hemispheres:
         hemisphere_image_urls.append(hemisphere)
