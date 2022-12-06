@@ -15,11 +15,26 @@
       /*** Jumbotron background styling ***/
 
       .jumbotron {
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%,rgba(255,255,255,0.7) 100%),
-          url("https://mars.nasa.gov/system/resources/detail_files/26992_PIA24923_MAIN-web.jpg");
-        background-size: contain;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
       }
 
+      .jumbotron-image {
+        background: linear-gradient(rgba(0, 0, 250, 0.25), rgba(125, 250, 250, 0.45));
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .jumbotron-content {
+        color: white;
+        position: relative;
+      }
+      
       /*** 3d Button Styling used in Jumbotron ***/
 
       .btn3d {
@@ -63,14 +78,22 @@
   <body>
     <div class="container">
       <!-- Add Jumbotron to Header -->
-      <div class="jumbotron text-center">
+      <div class="jumbotron">
         <h1>Mission to Mars</h1>
-        <p>
-          <a class="btn btn-primary btn-lg btn3d" href="/scrape" role="button">
-            Scrape New Data
-          </a>
-        </p>
+
+        <img 
+          src={{mars.background_image}} 
+          class="jumbotron-image" 
+          alt = "https://mars.nasa.gov/system/resources/detail_files/26992_PIA24923_MAIN-web.jpg"
+        />
+
+        <div class="jumbotron-content">
+            <h1 class="display-3">Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg btn3d" href="/scrape" role="button">Latest News</a></p>
+        </div>
+
       </div>
+
       <!-- Section for Mars News -->
       <div class="row" id="mars_news">
         <div class="col-md-12">
